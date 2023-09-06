@@ -8,8 +8,9 @@
 
 
 
-const api_url = "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=2455ec6af1960cb47d8ca4e4cbd8c21d&hash=93f481289571cc8dc9ac2c1e6f143c28";
+const api_url = "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=2455ec6af1960cb47d8ca4e4cbd8c21d&hash=93f481289571cc8dc9ac2c1e6f143c28";
 async function getdata(api_url) {
+    
     const response = await fetch(api_url);
     var data = await response.json();
     if (response) {
