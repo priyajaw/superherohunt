@@ -1,0 +1,5 @@
+{
+    "js/ts.implicitProjectConfig.checkJs": false,
+    "js/ts.implicitProjectConfig.experimentalDecorators": false,
+    "js/ts.implicitProjectConfig.strictFunctionTypes": false
+}
