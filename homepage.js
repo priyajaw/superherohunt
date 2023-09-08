@@ -107,26 +107,28 @@ function handleClick(e, clickedElement) {
         if (e.target.classList.contains('fa-regular')) {
             e.target.classList.remove('fa-regular');
             e.target.classList.add('fa-solid');
+            const charch = e.target.parentElement.parentElement.parentElement;
 
-            localst.removeFromDB(e.target.dataset.id);
+            const charinfo = {
+                id: e.target.dataset.id,
+                name: charch.querySelector('.card-text').textContent,
+                image: charch.querySelector('.card-img-top').src
+
+            }
+            // console.log(e.target.parentElement.parentElement.parentElement);
+            localst.saveIntoDB(charinfo);
+          
+
+         
 
         }
         else {
             e.target.classList.remove('fa-solid');
             e.target.classList.add('fa-regular');
-
-
+            localst.removeFromDB(e.target.dataset.id);
+       
         }
-        const charch = e.target.parentElement.parentElement.parentElement;
-
-        const charinfo = {
-            id: e.target.dataset.id,
-            name: charch.querySelector('.card-text').textContent,
-            image: charch.querySelector('.card-img-top').src
-
-        }
-        console.log(e.target.parentElement.parentElement.parentElement);
-        localst.saveIntoDB(charinfo);
+   
 
     }
 }
